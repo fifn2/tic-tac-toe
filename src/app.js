@@ -16,7 +16,10 @@ window.addEventListener('load', () => {
       document.getElementsByClassName('corner-bottom-right')[0],
     ];
     const layout = [];
-    buttons.forEach(button => layout.push(button.innerText));
+    buttons.forEach((button) => {
+      if (!button) { return; }
+      layout.push(button.innerText);
+    });
     return layout;
   };
 
@@ -46,6 +49,7 @@ window.addEventListener('load', () => {
         $turn.innerText = 'Try clicking an empty space.';
       }, 500);
     };
+    const $squares = [...document.getElementsByClassName('button')];
     const $edges = [
       document.getElementsByClassName('edge')[0],
       document.getElementsByClassName('edge')[1],
@@ -82,6 +86,13 @@ window.addEventListener('load', () => {
         autoClick(randomCorner);
       // Computers second turn
       } else if (turnNumber === 2) {
+        if (
+          $corners.some(corner => !corner)
+          || $squares
+            .filter(
+              square => square.innerText === 'X',
+            ).length === 2
+        ) { return; }
         // O did not play the center square
         if (previous !== $center) {
           /* The corner previously played by X,
@@ -205,8 +216,6 @@ window.addEventListener('load', () => {
         // I really wanted to finish, but I had a deadline :(
         // eslint-disable-next-line no-use-before-define
         welcome(localHumanTurnFirst, 'thats all for now');
-      } else if (turnNumber > 3) {
-        computerTurn(1, getLayout(), false, localHumanTurnFirst);
       }
     }
   };
@@ -288,6 +297,7 @@ window.addEventListener('load', () => {
       `
     : ''}
     `;
+    if (type !== 'welcome') { return; }
     welcomeButton(localHumanTurnFirst);
   };
 
