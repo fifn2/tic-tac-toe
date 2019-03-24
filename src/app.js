@@ -267,7 +267,7 @@ window.addEventListener('load', () => {
   const welcome = (localHumanTurnFirst, type) => {
     const $mainGame = document.getElementsByClassName('main-game')[0];
     const $turn = document.getElementsByClassName('turn')[0];
-    $turn.innerText = type === 'welcome' ? 'Welcome!' : 'That\'s all for now folks.';
+    $turn.innerText = type === 'welcome' ? 'Welcome!' : 'That\'s all for now, folks.';
     $mainGame.className = 'main-game dp-4 welcome center';
     $mainGame.innerHTML = `
       <section class="center welcome-section">
