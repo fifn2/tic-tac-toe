@@ -260,7 +260,34 @@ window.addEventListener('load', () => {
     const $turn = document.getElementsByClassName('turn')[0];
     $turn.innerText = type === 'welcome' ? 'Welcome!' : 'That\'s all for now folks.';
     $mainGame.className = 'main-game dp-4 welcome center';
-    $mainGame.innerHTML = `<section class="center welcome-section"><h2 class="heading welcome-heading">Welcome to unbeatable tic-tac-toe by <a href="https://github.com/fifn2">fifn2</a>!</h2><p class="paragraph welcome-text">${type === 'welcome' ? 'Your turn will be second to the computer for a while, but that might change in the future.' : 'Right now, the computer only knows how to go this far. This may change in the future.'} Have fun and feel free to look at the <a href="https://github.com/fifn2/tic-tac-toe" rel="external">source code</a> if you're curious, and if you find any issues, or have any suggestions, I'd really appreciate you taking the time to tell me <a href="https://github.com/fifn2/tic-tac-toe/issues/new" rel="external">here</a>. ${type === 'welcome' ? 'Without further adieu,' : 'If you feel like it,'} <strong class="bold">press the ${type === 'welcome' ? '"Start"' : '"Play Again?"'} button below to start the game!</strong></p></section><div role="none" class="center start-button-container"><button class="start-button button">${type === 'welcome' ? 'Start' : 'Play Again?'}</button></div>`;
+    $mainGame.innerHTML = `
+      <section class="center welcome-section">
+        <h2 class="heading welcome-heading">Welcome to unbeatable tic-tac-toe by <a href="https://github.com/fifn2">fifn2</a>!</h2>
+        <p class="paragraph welcome-text">
+          ${type === 'welcome'
+    ? 'Your turn will be second to the computer for a while, but that might change in the future.'
+    : 'Right now, the computer only knows how to go this far. This may change in the future.'}
+          Have fun and feel free to look at the
+          <a href="https://github.com/fifn2/tic-tac-toe" rel="external">source code</a>
+          if you're curious, and if you find any issues, or have any suggestions,
+           I'd really appreciate you taking the time to tell me
+          <a href="https://github.com/fifn2/tic-tac-toe/issues/new" rel="external">here</a>.
+          ${type === 'welcome' ? 'Without further adieu,' : 'If you feel like it,'}
+          <strong class="bold">
+            ${type === 'welcome'
+    ? 'press the "Start" button to play.'
+    : 'reload the page to start again.'}
+          </strong>
+        </p>
+      </section>
+      ${type === 'welcome'
+    ? `
+        <div role="none" class="center start-button-container">
+          <button class="start-button button">Start</button>
+        </div>
+      `
+    : ''}
+    `;
     welcomeButton(localHumanTurnFirst);
   };
 
