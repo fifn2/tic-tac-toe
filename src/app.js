@@ -303,7 +303,7 @@ window.addEventListener('load', () => {
         </div>
       `
     : ''}
-    `;
+    `.replace(/\s{2}/g, '').split('\n').join('');
     if (type !== 'welcome') { return; }
     welcomeButton(localHumanTurnFirst);
   };
