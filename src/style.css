@@ -1,0 +1,293 @@
+/* References relative to compiled file (style.min.css) */
+
+:root {
+  --color: #639;
+  --disabled-color: #595959;
+  --font:
+    Inter,
+    sans-serif;
+  --bold-font:
+    "Inter Bold",
+    sans-serif;
+  --header-letter-spacing: -0.02em;
+
+  /* Opposite of header letter spacing */
+  --text-letter-spacing: calc(var(--header-letter-spacing) * -1);
+  --spacing: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+}
+
+@media (max-width: 1200px) {
+  :root {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1200px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+.body {
+  display: flex;
+  width: calc(100% - var(--spacing));
+  margin: 0;
+  flex-direction: column;
+}
+
+/* Inter (https://rsms.me/inter/) by Rasmus Andersson */
+@font-face {
+  font-family: Inter;
+  src: url("assets/fonts/subset-Inter-Regular.eot");
+  src:
+    url("assets/fonts/subset-Inter-Regular.eot?#iefix") format("embedded-opentype"),
+    url("assets/fonts/subset-Inter-Regular.woff2") format("woff2"),
+    url("assets/fonts/subset-Inter-Regular.woff") format("woff"),
+    url("assets/fonts/subset-Inter-Regular.ttf") format("truetype"),
+    url("assets/fonts/subset-Inter-Regular.svg#Inter-Regular") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Inter Bold";
+  src: url("assets/fonts/subset-Inter-Bold.eot");
+  src:
+    url("assets/fonts/subset-Inter-Bold.eot?#iefix") format("embedded-opentype"),
+    url("assets/fonts/subset-Inter-Bold.woff2") format("woff2"),
+    url("assets/fonts/subset-Inter-Bold.woff") format("woff"),
+    url("assets/fonts/subset-Inter-Bold.ttf") format("truetype"),
+    url("assets/fonts/subset-Inter-Bold.svg#Inter-Bold") format("svg");
+  font-style: normal;
+  font-weight: bold;
+}
+
+::selection {
+  color: #fff;
+  background: var(--color);
+}
+
+:any-link {
+  --link-color: #283a77;
+  --link-visited-color: var(--color);
+  font-family: var(--bold-font);
+  color: var(--link-color);
+  text-decoration: none;
+  outline-color: var(--link-color);
+
+  &::selection {
+    color: var(--link-color);
+    background: #fff;
+  }
+
+  &:focus,
+  &:hover {
+    border-bottom: 2px solid var(--link-color);
+  }
+
+  &:visited {
+    color: var(--link-visited-color);
+    outline-color: var(--link-visited-color);
+
+    &::selection {
+      color: var(--link-visited-color);
+    }
+
+    &:focus,
+    &:hover {
+      border-bottom-color: var(--link-visited-color);
+    }
+  }
+
+}
+
+.dp-4 {
+  box-shadow:
+    0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.site-header {
+  z-index: 1;
+  color: #fff;
+  background: var(--color);
+}
+
+.turn {
+  margin: 0.5em;
+  font: 2em var(--font);
+  font-kerning: normal;
+  letter-spacing: var(--header-letter-spacing);
+
+  &::selection {
+    color: var(--color);
+    background: #fff;
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  --button-hover-bg: #609;
+  font:
+    1rem
+    var(--bold-font);
+  font-kerning: normal;
+  color: #fff;
+  letter-spacing: var(--text-letter-spacing);
+  background: var(--color);
+  border: 0;
+  transition: background-color 0.5s;
+
+  &:hover {
+    cursor: pointer;
+    background: var(--button-hover-bg);
+  }
+
+  &:focus,
+  &:hover:focus {
+    color: var(--color);
+    background-color: #fff;
+    outline: 0;
+    box-shadow: inset 0 0 0 2px var(--color);
+  }
+
+  &:disabled {
+    background: var(--disabled-color);
+
+    &:hover {
+      cursor: unset;
+    }
+
+    &::selection {
+      color: var(--disabled-color);
+    }
+  }
+
+  &::selection {
+    color: var(--color);
+    background: #fff;
+  }
+}
+
+.main-game {
+  flex: 1;
+  background: #fff;
+}
+
+.tic-tac-toe {
+  --grid-spacing: calc(var(--spacing) / 2);
+  display: grid;
+  padding: var(--grid-spacing);
+  grid-gap: var(--grid-spacing);
+  grid-template-areas:
+    "top-left-corner top-edge top-right-corner"
+    "left-edge center right-edge"
+    "bottom-left-corner bottom-edge bottom-right-corner";
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome-section {
+  flex: 1.5;
+  padding: 1em 1em 0;
+  justify-self: center;
+  flex-direction: column;
+}
+
+.welcome-text {
+  text-indent: 2em;
+}
+
+.paragraph {
+  max-width: 50ch;
+  font:
+    1em / 1.5
+    var(--font);
+  font-kerning: normal;
+  letter-spacing: var(--text-letter-spacing);
+}
+
+.bold {
+  font:
+    1em
+    var(--bold-font);
+}
+
+.heading {
+  margin: 0.5em;
+  font-family: var(--bold-font);
+  text-align: center;
+  font-kerning: normal;
+  letter-spacing: var(--header-letter-spacing);
+}
+
+.welcome-heading {
+  font-size: 1.5em;
+}
+
+.start-button-container {
+  flex: 0.5;
+  align-self: stretch;
+}
+
+.start-button {
+  --start-button-color: #134f19;
+  --start-button-hover-color: #00581a;
+  margin: 0;
+  background: var(--start-button-color);
+
+  &:hover {
+    background: var(--start-button-hover-color);
+  }
+
+  &:focus,
+  &:hover:focus {
+    color: var(--start-button-color);
+    box-shadow: inset 0 0 0 2px var(--start-button-color);
+  }
+
+  &::selection {
+    color: var(--start-button-color);
+    background: #fff;
+  }
+}
+
+@keyframes fadein {
+  from { background: transparent; }
+}
+
+.game-over-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  background: #fffe;
+  animation: fadein 0.5s;
+}
+
+.game-over-header {
+  font-size: 2em;
+}
+
+.start-button,
+.try-again-button {
+  padding: 1rem;
+  border-radius: 5px;
+}
