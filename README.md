@@ -11,7 +11,7 @@ A website where you can play tic-tac-toe against the computer and never, ever, w
 ## Getting Started
 
 Navigate to the GitHub Page for this repository (under the Environment tab). You
- should be taken to a page that looks like this:
+ should be taken to a page that looks like this:  
 ![
   Welcome!
   Welcome to unbeatable tic-tac-toe by fifn2!
@@ -21,7 +21,7 @@ Navigate to the GitHub Page for this repository (under the Environment tab). You
      you taking the time to tell me here. Without further adieu, press the
       "Start" button below to start the game!
   White on green button with text "Start".
-](assets/website.jpg)
+](assets/website.jpg)  
 Press the white on green button that says "Start".
 
 ### Prerequisites
