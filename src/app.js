@@ -271,7 +271,14 @@ window.addEventListener('load', () => {
     $mainGame.className = 'main-game dp-4 welcome center';
     $mainGame.innerHTML = `
       <section class="center welcome-section">
-        <h2 class="heading welcome-heading">Welcome to unbeatable tic-tac-toe by <a href="https://github.com/fifn2">fifn2</a>!</h2>
+        <h2 class="heading welcome-heading">
+          ${type === 'welcome'
+    ? `
+      Welcome to unbeatable tic-tac-toe by
+      <a href="https://github.com/fifn2">fifn2</a>!
+    `
+    : 'Hopefully someday I\'ll find the bug.'}
+        </h2>
         <p class="paragraph welcome-text">
           ${type === 'welcome'
     ? 'Your turn will be second to the computer for a while, but that might change in the future.'
