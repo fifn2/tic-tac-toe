@@ -286,7 +286,7 @@ window.addEventListener('load', () => {
           Have fun and feel free to look at the
           <a href="https://github.com/fifn2/tic-tac-toe" rel="external">source code</a>
           if you're curious, and if you find any issues, or have any suggestions,
-           I'd really appreciate you taking the time to tell me
+          I'd really appreciate you taking the time to tell me
           <a href="https://github.com/fifn2/tic-tac-toe/issues/new" rel="external">here</a>.
           ${type === 'welcome' ? 'Without further adieu,' : 'If you feel like it,'}
           <strong class="bold">
